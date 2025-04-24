@@ -1,44 +1,49 @@
-# Discord Webhook Tool
+# Tools for Open WebUI
 
-A simple and efficient Python tool to send messages asynchronously to a Discord channel using a webhook URL. Designed for easy integration into asynchronous applications or use as a standalone utility.
+This directory serves as a collection of tools designed to enhance and extend the capabilities of the Open WebUI platform. Each tool provides specific functionality, enabling seamless integration and efficient operations within the Open WebUI ecosystem.
 
-**Author:** [Jakkraphop Pengchan](https://github.com/jakkph32)
+## Purpose
 
-**Repository:** [Open WebUI Utils](https://github.com/jakkph32/open-webui-utils)
+The `tools` directory is a centralized repository for various utilities and modules that can be used to create, manage, and streamline workflows in Open WebUI. These tools are written in Python and follow modern design principles, emphasizing performance, ease of use, and scalability.
 
-**Version:** 0.0.2
+## Available Tools
 
-## Description
+### 1. [Discord Webhook](tools/discord_webhook.py)
+- **Description**: A tool to send notifications or messages to a Discord channel via a webhook.
+- **Key Features**:
+  - Asynchronous messaging using `aiohttp`.
+  - Configured via `DISCORD_WEBHOOK_URL` environment variable.
+  - Supports message validation and truncation for Discord's character limit.
+- **Use Case**: Ideal for sending alerts, system notifications, or updates directly to Discord.
 
-This tool provides a Python class (`Tools`) that allows you to send messages to a specific Discord channel via its webhook URL. It leverages `aiohttp` for asynchronous HTTP requests, ensuring non-blocking operations suitable for modern async applications. Configuration is handled securely via an environment variable.
+### 2. [Telegram Symphony](tools/telegram_symphony.py)
+- **Description**: A tool to send messages to a Telegram chat using a bot token and chat ID.
+- **Key Features**:
+  - Asynchronous operations with `aiohttp`.
+  - Configured via `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` environment variables.
+  - Validates configurations and ensures compatibility with Telegram's API.
+- **Use Case**: Suitable for broadcasting messages, updates, or notifications to Telegram users or groups.
 
-## Features
+## How to Use
 
-*   **Asynchronous:** Uses `aiohttp` for non-blocking message sending.
-*   **Easy Configuration:** Configure the target webhook URL via the `DISCORD_WEBHOOK_URL` environment variable.
-*   **Input Validation:** Uses `pydantic` to validate the webhook URL format on initialization.
-*   **Message Length Handling:** Automatically truncates messages exceeding Discord's 2000-character limit and logs a warning.
-*   **Session Management:** Efficiently manages `aiohttp.ClientSession`. Supports using an internally managed session (via `async with`) or an externally provided session.
-*   **Error Handling:** Catches common HTTP and network errors, logs them, and returns `False` on failure.
-*   **Clean & Reusable:** Designed as a class for easy integration and reuse.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jakkph32/open-webui-utils.git
+   cd open-webui-utils/tools
+   ```
 
-## Configuration
-Before running the tool, you **must** set the `DISCORD_WEBHOOK_URL` environment variable to your target Discord channel's webhook URL.
+2. Set the required environment variables for the tool you wish to use.
 
+3. Import the tool in your Python project and call its methods. Examples are provided in each tool's script.
 
-## Error Handling
+## Contribution
 
-* If the `DISCORD_WEBHOOK_URL` is missing or invalid, a `ValueError` is raised during `Tools` initialization.
-* If sending the message fails (e.g., network issue, invalid webhook, Discord error), an error message is logged, and `send_message` returns `False`.
-* Unexpected errors are caught, logged with a traceback, and `send_message` returns `False`.
+We welcome contributions to expand the `tools` collection! If you have a utility that could benefit the Open WebUI ecosystem, feel free to submit a pull request.
 
+## Licensing
 
-## Contributing
+The tools in this directory are licensed under the MIT License. See the `LICENSE` file for more details.
 
-Contributing
-Contributions are welcome! Please feel free to submit issues or pull requests on the source repository (if applicable).
+## Author
 
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Created and maintained by [Jakkraphop Pengchan](https://github.com/jakkph32). For more information or to report issues, visit the [repository](https://github.com/jakkph32/open-webui-utils).
