@@ -8,7 +8,7 @@ The `tools` directory is a centralized repository for various utilities and modu
 
 ## Available Tools
 
-### 1. [Discord Webhook](tools/discord_webhook.py)
+### 1. [Discord Webhook](messaging/discord_webhook.py)
 - **Description**: A tool to send notifications or messages to a Discord channel via a webhook.
 - **Key Features**:
   - Asynchronous messaging using `aiohttp`.
@@ -16,7 +16,7 @@ The `tools` directory is a centralized repository for various utilities and modu
   - Supports message validation and truncation for Discord's character limit.
 - **Use Case**: Ideal for sending alerts, system notifications, or updates directly to Discord.
 
-### 2. [Telegram Symphony](tools/telegram_symphony.py)
+### 2. [Telegram Symphony](messaging/telegram_symphony.py)
 - **Description**: A tool to send messages to a Telegram chat using a bot token and chat ID.
 - **Key Features**:
   - Asynchronous operations with `aiohttp`.
