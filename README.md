@@ -33,8 +33,13 @@ Once installed and configured, the tools should become available for use within 
 
 Assuming the `DISCORD_WEBHOOK_URL` is correctly set:
 
-*   **User Prompt:** "Hey, please send a notification to Discord saying 'The long-running analysis task has completed successfully.'"
-*   **Open WebUI / Model:** The model should recognize the intent to use the Discord tool, extract the message content, and invoke the `send_message` function from the `discord_webhook.py` tool.
+*   **User Prompt:** 
+
+    ```
+    send_message('The long-running analysis task has completed successfully.')
+    ```
+
+*   **Open WebUI / Model:** The model should recognize the intent to use the Discord tool, extract the message content, and invoke the `send_message` function from the `discord_webhook` tool.
 *   **Result:** The message "The long-running analysis task has completed successfully." will appear in the configured Discord channel.
 
 ## Configuration Details
